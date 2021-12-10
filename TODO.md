@@ -4,7 +4,7 @@ This is the basic road-map. (Not strict, some topics might be added, removed or 
 
 The base features that project have to have.
 
-[] Create an RTMP Server by using Nginx. Configure it to receive the live stream, to convert the live stream to HLS, and to serve live stream through an endpoint.
+[x] Create an RTMP Server by using Nginx. Configure it to receive the live stream, to convert the live stream to HLS, and to serve live stream through an endpoint.
 [] Install Laravel Jetstream with Livewire.
 [] A stream key must be created at user registeration.
 [] Configure Nginx and Laravel App to validate this stream key. (If key is wrong, do not allow user to start streaming).
