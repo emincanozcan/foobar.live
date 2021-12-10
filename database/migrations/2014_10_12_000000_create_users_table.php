@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
 
-            $table->string('username');
+            $table->string('username')->unique();
             $table->uuid('stream_key')->index();
 
             $table->timestamps();

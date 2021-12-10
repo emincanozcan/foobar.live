@@ -30,6 +30,11 @@ class User extends Authenticatable
         });
     }
 
+    public function streams()
+    {
+        return $this->hasMany(Stream::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *

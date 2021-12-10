@@ -53,6 +53,16 @@ services:
             test: ["CMD", "redis-cli", "ping"]
             retries: 3
             timeout: 5s
+    rtmp-server:
+      build:
+        context: ./rtmp-server
+        dockerfile: Dockerfile
+      ports:
+        - "1935:1935"
+        - "1936:1936"
+      networks:
+        - sail
+
 networks:
     sail:
         driver: bridge
