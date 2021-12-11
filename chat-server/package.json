@@ -1,0 +1,16 @@
+{
+    "name": "chat-server",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "dev": "nodemon index.js"
+    },
+    "dependencies": {
+        "ioredis": "^4.28.2",
+        "socket.io": "^4.4.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.15"
+    }
+}

@@ -24,9 +24,9 @@ Route::get('u/{username}', function () {
         ->streams()
         ->where('ended_at', null)
         ->orderByDesc('id')
-        ->first();
+        ->firstOrFail();
 
-    return view('watch-stream', compact('stream'));
+    return view('stream.show', compact('stream'));
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

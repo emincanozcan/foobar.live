@@ -62,6 +62,17 @@ services:
         - "1936:1936"
       networks:
         - sail
+    chat-server:
+      build:
+        context: ./chat-server
+        dockerfile: Dockerfile
+      volumes:
+          - ./chat-server:/usr/src/app
+      ports:
+        - "4000:4000"
+      networks:
+        - sail
+
 
 networks:
     sail:
