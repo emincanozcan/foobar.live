@@ -1,4 +1,8 @@
 <div>
     <input type="text" wire:model="message">
-    <button wire:click="sendMessage">Send message</button>
+    @auth
+        <x-jet-button wire:click="sendMessage">Send message</x-jet-button>
+    @else    
+        <x-jet-button disabled>Log in to send message</x-jet-button>
+    @endauth
 </div>

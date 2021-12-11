@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,14 +20,12 @@ Route::get('/', function () {
 });
 
 Route::get('u/{username}', function () {
-    $stream = User::where(['username' => request('username')])
-        ->firstOrFail()
-        ->streams()
-        ->where('ended_at', null)
-        ->orderByDesc('id')
-        ->firstOrFail();
+    throw_unless(
+        User::where(['username' => request('username')])->exists(),
+        new ModelNotFoundException()
+    );
 
-    return view('stream.show', compact('stream'));
+    return view('stream.show');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
