@@ -10,13 +10,14 @@ The base features that project have to have.
 [x] Configure Nginx and Laravel App to validate this stream key. (If key is wrong, do not allow user to start streaming).
 [x] Create an endpoint like `service/watch/{username}` to everybody watch streaming of user. 
 [x] Add stream key to user settings, user can see it or regenerate it.
-[] For chatting during the live stream, create a chat service with nodejs - socket.io. (Flow: Message -> Laravel App -> Redis -> Socket Server -> Emit To Users)
+[x] For chatting during the live stream, create a chat service with nodejs - socket.io. (Flow: Message -> Laravel App -> Redis -> Socket Server -> Emit To Users)
 [] Design the UI, make it a little bit fancy
 
 ## Additional Features
 
 The additional features that project good to have.
 
+[] Inspect delay, videojs retry logic. It might be related to segment length.
 [] Design the UI, make it more fancy
 [] Follower system
 [] Subscription system
