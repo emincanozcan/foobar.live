@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('u/{username}', function () {
+    $stream = User::where(['username' => request('username')])
+        ->firstOrFail()
+        ->streams()
+        ->where('ended_at', null)
+        ->orderByDesc('id')
+        ->first();
+
+    return view('watch-stream', compact('stream'));
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
