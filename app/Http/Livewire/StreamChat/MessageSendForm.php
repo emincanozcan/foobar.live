@@ -7,12 +7,11 @@ use Livewire\Component;
 
 class MessageSendForm extends Component
 {
-    public string $message;
+    public string $message = "";
     public int $streamId;
 
     public function mount($streamId)
     {
-        $this->message = "initial message";
         $this->streamId = $streamId;
     }
 
@@ -29,7 +28,7 @@ class MessageSendForm extends Component
 
         Redis::publish('chat-channel', json_encode($data));
 
-        $this->message = "ok";
+        $this->message = "";
     }
 
     public function render()

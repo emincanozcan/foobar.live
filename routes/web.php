@@ -16,8 +16,8 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
 
 Route::get('u/{username}', function () {
     throw_unless(
@@ -28,6 +28,6 @@ Route::get('u/{username}', function () {
     return view('stream.show');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('dashboard');
+// })->name('dashboard');
