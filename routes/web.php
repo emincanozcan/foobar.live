@@ -23,7 +23,7 @@ Route::get('u/{username}', function () {
     $user = User::where(['username' => request('username')])->first();
     throw_if($user === null, new ModelNotFoundException());
 
-    $title = $user->currentLiveStream() ? $user->currentLiveStream()->title : 'Live Stream Of: ' . $user->username;
+    $title = $user->currentLiveStream()?->title ? $user->currentLiveStream()->title : 'Live Stream Of: ' . $user->username;
     return view('stream.show', [
         'title' => $title
     ]);
