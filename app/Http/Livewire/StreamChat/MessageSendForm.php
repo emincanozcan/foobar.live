@@ -31,7 +31,7 @@ class MessageSendForm extends Component
             ]
         ];
 
-        Redis::publish('chat-channel', json_encode($data));
+        Redis::publish('socket-channel', json_encode($data));
 
         $this->message = "";
     }

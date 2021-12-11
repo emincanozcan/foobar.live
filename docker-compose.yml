@@ -62,12 +62,12 @@ services:
         - "1936:1936"
       networks:
         - sail
-    chat-server:
+    socket-server:
       build:
-        context: ./chat-server
+        context: ./socket-server
         dockerfile: Dockerfile
       volumes:
-          - ./chat-server:/usr/src/app
+          - ./socket-server:/usr/src/app
       ports:
         - "4000:4000"
       networks:
