@@ -56,7 +56,7 @@
                     </div>
                     <script>
                         const elMessages = document.querySelector('#chat-messages')
-                        const socket = io("http://localhost:4000", {
+                        const socket = io(window.SOCKET_ENDPOINT, {
                             transports: ['websocket', 'polling', 'flashsocket'],
                             query: {
                                 streamId: @js($stream->id)
