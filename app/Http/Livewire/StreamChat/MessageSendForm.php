@@ -9,6 +9,9 @@ class MessageSendForm extends Component
 {
     public string $message = "";
     public int $streamId;
+    public array $rules = [
+        'message'  => 'string|min:1|max:512|required'
+    ];
 
     public function mount($streamId)
     {
@@ -17,6 +20,8 @@ class MessageSendForm extends Component
 
     public function sendMessage()
     {
+        $this->validate();
+
         $data = [
             'event'  => 'chat.newMessage',
             'data' => [
