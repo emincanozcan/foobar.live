@@ -12,6 +12,7 @@ class PlayerAndChat extends Component
 
     public Stream|null $stream;
     public bool $exists;
+    public bool $isOwner;
 
     public function mount()
     {
@@ -22,13 +23,11 @@ class PlayerAndChat extends Component
     public function fillStreamData()
     {
         $this->stream = User::where(['username'=> $this->username])
-            ->first()
-            ->streams()
-            ->where('ended_at', null)
-            ->orderbydesc('id')
-            ->first();
+             ->first()
+             ->currentLiveStream();
 
         $this->exists = $this->stream ? true : false;
+        $this->isOwner = auth()->check() && auth()->user()->username === $this->username;
     }
 
     public function render()

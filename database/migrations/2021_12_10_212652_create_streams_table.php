@@ -19,6 +19,8 @@ class CreateStreamsTable extends Migration
             $table->foreignIdFor(User::class);
             $table->timestamp('started_at');
             $table->timestamp('ended_at')->nullable();
+            $table->string('title', 255)->nullable();
+            $table->string('description', 2048)->nullable();
             $table->timestamps();
         });
     }

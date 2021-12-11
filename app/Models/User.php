@@ -77,7 +77,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(Stream::class);
     }
-
+    public function currentLiveStream()
+    {
+        return $this->streams()
+                ->where('ended_at', null)
+                ->orderbydesc('id')
+                ->first();
+    }
     public function regenerateStreamKey()
     {
         $this->update([

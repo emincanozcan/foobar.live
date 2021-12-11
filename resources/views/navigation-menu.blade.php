@@ -15,6 +15,12 @@
                     <x-jet-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
                         {{ __('Home') }}
                     </x-jet-nav-link>
+
+                    @auth
+                        <x-jet-nav-link href="{{ route('stream.watch', request()->user()->username) }}" :active="request()->routeIs('stream.watch', request()->user()->username)">
+                        {{ __('My Live Stream') }}
+                    </x-jet-nav-link>
+                    @endauth
                 </div>
             </div>
 

@@ -20,13 +20,14 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('u/{username}', function () {
-    throw_unless(
-        User::where(['username' => request('username')])->exists(),
-        new ModelNotFoundException()
-    );
+    $user = User::where(['username' => request('username')])->first();
+    throw_if($user === null, new ModelNotFoundException());
 
-    return view('stream.show');
-});
+    $title = $user->currentLiveStream() ? $user->currentLiveStream()->title : 'Live Stream Of: ' . $user->username;
+    return view('stream.show', [
+        'title' => $title
+    ]);
+})->name('stream.watch');
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');

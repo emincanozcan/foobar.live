@@ -19,7 +19,7 @@ redis.subscribe('chat-channel');
 redis.on('message', function (channel, message) {
     message = JSON.parse(message)
     const streamId = message.data.streamId;
-    io.to(`chat:${streamId}`).emit('message',message)
+    io.to(`chat:${streamId}`).emit('message', message)
 });
 
 httpServer.listen(4000)
