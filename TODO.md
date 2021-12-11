@@ -8,7 +8,8 @@ The base features that project have to have.
 [x] Install Laravel Jetstream with Livewire.
 [x] An username and a stream key must be created at user creation.
 [x] Configure Nginx and Laravel App to validate this stream key. (If key is wrong, do not allow user to start streaming).
-[] Create an endpoint like `service/watch/{username}` to everybody watch streaming of user.
+[x] Create an endpoint like `service/watch/{username}` to everybody watch streaming of user. 
+[] Add stream key to user settings, user can see it or refresh it.
 [] For chatting during the live stream, create a chat service with nodejs - socket.io. (Flow: Message -> Laravel App -> Redis -> Socket Server -> Emit To Users)
 [] Design the UI, make it a little bit fancy
 
