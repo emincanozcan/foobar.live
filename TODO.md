@@ -11,6 +11,7 @@ The base features that project have to have.
 [x] Create an endpoint like `service/watch/{username}` to everybody watch streaming of user. 
 [x] Add stream key to user settings, user can see it or regenerate it.
 [x] For chatting during the live stream, create a chat service with nodejs - socket.io. (Flow: Message -> Laravel App -> Redis -> Socket Server -> Emit To Users)
+[] Add title, description fields to stream. Support live updates by using socket connection.
 [] Design the UI, make it a little bit fancy
 
 ## Additional Features
