@@ -30,11 +30,6 @@ class User extends Authenticatable
         });
     }
 
-    public function streams()
-    {
-        return $this->hasMany(Stream::class);
-    }
-
     /**
      * The attributes that are mass assignable.
      *
@@ -45,6 +40,7 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
+        'stream_key'
     ];
 
     /**
@@ -76,4 +72,16 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function streams()
+    {
+        return $this->hasMany(Stream::class);
+    }
+
+    public function regenerateStreamKey()
+    {
+        $this->update([
+            'stream_key' => (string) Str::uuid(),
+        ]);
+    }
 }

@@ -1,16 +1,20 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="text-xl font-semibold leading-tight text-gray-800">
             {{ __('Profile') }}
         </h2>
     </x-slot>
 
     <div>
-        <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-            @if (Laravel\Fortify\Features::canUpdateProfileInformation())
-                @livewire('profile.update-profile-information-form')
+        <div class="py-10 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            @livewire('profile.stream-key-form')
+            <x-jet-section-border />
 
-                <x-jet-section-border />
+            @if (Laravel\Fortify\Features::canUpdateProfileInformation())
+                <div class="mt-10 sm:mt-0">
+                    @livewire('profile.update-profile-information-form')
+                    <x-jet-section-border />
+                </div>
             @endif
 
             @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
