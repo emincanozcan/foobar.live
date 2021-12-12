@@ -25,7 +25,25 @@ This is how the idea of FooBar.Live was born. It emerged as an attempt to solve 
 
 FooBar.Tv is completely dockerized. It is possible to run the project without Docker, but it is not recommended because of the effort that it will take.
 
-### Install With Docker 
+### Install With Docker - Automatic
+
+There is a file in the project called [`setup.sh`](setup.sh), it is basically a shell script that runs the necessary commands for installation.
+
+If you don't want to run a shell script directly, you can follow the steps at (#install-with-docker---manual)[Install With Docker - Manual].
+
+```bash
+# Clone this repository
+$ git clone https://github.com/emincanozcan/foobar.live
+
+# Go into the repository
+$ cd foobar.live
+
+# Run the script
+$ chmox +x ./setup.sh && ./setup.sh
+```
+
+
+### Install With Docker - Manual
 
 ```bash
 # Clone this repository
@@ -38,7 +56,7 @@ $ cd foobar.live
 $ cp .env.example .env
 
 # Install PHP dependencies using a docker container
-$ docker run --rm --interactive --tty volume $PWD:/app composer install
+$ docker run --rm --interactive --tty --volume $PWD:/app composer install
 
 # Run the containers
 $ ./vendor/bin/sail up -d
@@ -77,3 +95,7 @@ If you have interest, you can take a look [FFmpeg Streaming Guide](https://trac.
 
 $ ffmpeg -re -i videofilepath.mp4 -vcodec libx264 -vprofile baseline -g 30 -acodec aac -strict -2 -f flv rtmp://localhost:1935/stream_receiver/$STREAM_KEY
 ```
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
