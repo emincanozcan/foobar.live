@@ -7,10 +7,12 @@ use Livewire\Component;
 
 class MessageSendForm extends Component
 {
-    public string $message = "";
+    public string $message = '';
+
     public int $streamId;
+
     public array $rules = [
-        'message'  => 'string|min:1|max:512|required'
+        'message'  => 'string|min:1|max:512|required',
     ];
 
     public function mount($streamId)
@@ -27,13 +29,13 @@ class MessageSendForm extends Component
             'data' => [
                 'username' => auth()->user()->username,
                 'message' => $this->message,
-                'streamId' => $this->streamId
-            ]
+                'streamId' => $this->streamId,
+            ],
         ];
 
         Redis::publish('socket-channel', json_encode($data));
 
-        $this->message = "";
+        $this->message = '';
     }
 
     public function render()

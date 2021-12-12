@@ -9,7 +9,7 @@ class EditUsernameForm extends Component
     public string $username;
 
     public array $rules = [
-        'username' => 'required|max:255|unique:users'
+        'username' => 'required|max:255|unique:users',
     ];
 
     public function mount()

@@ -6,10 +6,10 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
-use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -24,7 +24,7 @@ class User extends Authenticatable
         parent::boot();
 
         static::creating(function ($user) {
-            if (!$user->stream_key) {
+            if (! $user->stream_key) {
                 $user->stream_key = (string) Str::uuid();
             }
         });
@@ -40,7 +40,7 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
-        'stream_key'
+        'stream_key',
     ];
 
     /**
@@ -77,6 +77,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Stream::class);
     }
+
     public function currentLiveStream()
     {
         return $this->streams()
@@ -84,6 +85,7 @@ class User extends Authenticatable
                 ->orderbydesc('id')
                 ->first();
     }
+
     public function regenerateStreamKey()
     {
         $this->update([

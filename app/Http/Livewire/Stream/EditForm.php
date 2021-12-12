@@ -8,15 +8,19 @@ use Livewire\Component;
 
 class EditForm extends Component
 {
-    public string|null $title = "";
-    public string|null $description = "";
+    public string|null $title = '';
+
+    public string|null $description = '';
 
     public array $tags = [];
+
     public $availableTags;
+
     public $filteredTags;
 
     public $stream;
-    public string $tagSearch = "";
+
+    public string $tagSearch = '';
 
     public array $rules = [
         'title' => 'nullable|string|max:255',
@@ -51,7 +55,7 @@ class EditForm extends Component
             'id',
             collect($this->tags)->map(fn ($tag) => $tag['id'])
         )
-            ->where('name', 'ILIKE', '%' . $this->tagSearch . '%')
+            ->where('name', 'ILIKE', '%'.$this->tagSearch.'%')
             ->get();
     }
 
@@ -63,7 +67,7 @@ class EditForm extends Component
 
         $this->stream->update([
             'title' => $this->title,
-            'description' =>$this->description
+            'description' =>$this->description,
         ]);
 
         $this->stream->tags()->sync(
@@ -77,7 +81,7 @@ class EditForm extends Component
                 'title' => $this->title,
                 'description' => $this->description,
                 'tags' => $this->tags,
-            ]
+            ],
         ];
 
         Redis::publish('socket-channel', json_encode($data));
@@ -86,6 +90,7 @@ class EditForm extends Component
     public function render()
     {
         $this->setTags();
+
         return view('livewire.stream.edit-form');
     }
 }

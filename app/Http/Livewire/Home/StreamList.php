@@ -9,9 +9,13 @@ use Livewire\Component;
 class StreamList extends Component
 {
     public array $streams = [];
+
     public array $tags = [];
+
     public $filteredTags;
-    public string $tagSearch = "";
+
+    public string $tagSearch = '';
+
     public function addTag($tagId)
     {
         array_push($this->tags, Tag::findOrFail($tagId));
@@ -32,7 +36,7 @@ class StreamList extends Component
                 'id',
                 collect($this->tags)->map(fn ($tag) => $tag['id'])
             )
-            ->where('name', 'ILIKE', '%' . $this->tagSearch . '%')
+            ->where('name', 'ILIKE', '%'.$this->tagSearch.'%')
             ->get();
     }
 
@@ -42,6 +46,7 @@ class StreamList extends Component
         $this->streams = Stream::query()
             ->when(count($this->tags) > 0, function ($query) {
                 $selectedTagIds = collect($this->tags)->map(fn ($tag) => $tag['id']);
+
                 return $query->whereHas('tags', function ($q) use ($selectedTagIds) {
                     return $q->whereIn('id', $selectedTagIds);
                 });

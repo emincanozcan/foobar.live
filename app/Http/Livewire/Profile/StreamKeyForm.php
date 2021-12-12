@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class StreamKeyForm extends Component
 {
-    public $streamKey = "";
+    public $streamKey = '';
 
     public function mount()
     {

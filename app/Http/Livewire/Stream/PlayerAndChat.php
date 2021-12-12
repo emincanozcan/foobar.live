@@ -13,8 +13,11 @@ class PlayerAndChat extends Component
     public string $username;
 
     public Stream|null $stream;
+
     public string $streamUrl;
+
     public bool $exists;
+
     public bool $isOwner;
 
     public function mount()

@@ -22,6 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
 Route::post('stream/start', [StreamReceivingController::class, 'start']);
 Route::post('stream/done', [StreamReceivingController::class, 'done']);

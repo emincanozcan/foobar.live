@@ -14,7 +14,7 @@ class StreamReceivingController extends Controller
 
         $user = User::where(['stream_key' => $streamKey])->first();
 
-        if (!($user)) {
+        if (! ($user)) {
             return response()->json(['status' => false], 402);
         }
 
