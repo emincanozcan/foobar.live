@@ -1,4 +1,4 @@
-<p align="center"><img src="/art/banner.png" alt="Banner of FooBar.Live"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/emincanozcan/foobar.live/main/art/banner.png" alt="Banner of FooBar.Live"></p>
 
 # FooBar.Live: Livestreaming platform for developers
 
