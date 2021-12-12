@@ -19,4 +19,9 @@ class Stream extends Model
     {
         return $this->belongsToMany(Tag::class);
     }
+
+    public function scopeLive()
+    {
+        return $this->where('ended_at', null);
+    }
 }
