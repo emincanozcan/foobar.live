@@ -4,6 +4,6 @@
     </div>
 
     <div class="mt-8 font-medium text-indigo-900 text-xxl lg:mt-0">
-        A live-streaming platform for developers.
+        Livestreaming platform for developers.
     </div>
 </div>
