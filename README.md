@@ -8,11 +8,11 @@ Developing things and solving problems during a live stream is fun, educational 
 
 Unfortunately; popular live streaming platforms does not focus on developers. It's hard for the developer and the audience to find each other and come together on these platforms. (especially If the streamer is not very popular in community.)
 
-E.g; I like Laravel but Youtube doesn't give me good enough recommendations. Thankfully, I found (LaraStreamers)[https://larastreamers.com/], which is a platform that shares Laravel streamers. I got to know many Laravel streamers from there. 
+E.g; I like Laravel but Youtube doesn't give me good enough recommendations. Thankfully, I found [LaraStreamers](https://larastreamers.com/), which is a platform that shares Laravel streamers. I got to know many Laravel streamers from there. 
 
 On the other hand; even though Larastreamers and similar projects really help, I don't believe this is the best approach to solving this problem. These platforms are sharing with you what you are already interested in. They're not good at creating new interests.
 
-This is how the idea of FooBar.Live was born. It emerged as an attempt to solve the mentioned problems. Also, it started to be created in a Hackathon, (ÜçBüyücü Turnuvası)[https://ucbuyucuturnuvasi.com/], this means a lot for this kind of project :).
+This is how the idea of FooBar.Live was born. It emerged as an attempt to solve the mentioned problems. Also, it started to be created in a Hackathon, [ÜçBüyücü Turnuvası](https://ucbuyucuturnuvasi.com/), this means a lot for this kind of project :).
 
 ## Key Features
 
@@ -53,7 +53,7 @@ $ ./vendor/bin/sail artisan key:generate && ./vendor/bin/sail artisan storage:li
 
 ### With OBS
 
-(OBS (Open Broadcaster Software))[https://obsproject.com/] is free and open source software for video recording and live streaming.
+[OBS (Open Broadcaster Software)](https://obsproject.com/) is free and open source software for video recording and live streaming.
 
 * Copy FooBar.Live streaming key from the profile page.
 * Open OBS
@@ -70,7 +70,7 @@ $ ./vendor/bin/sail artisan key:generate && ./vendor/bin/sail artisan storage:li
 
 Especially for development purposes, opening OBS and starting a new live stream might be a little bit boring after a while. Using FFMPEG is a good alternative for this kind of situations, it allows you to stream a video file to a RTMP server. Because of FFMPEG is a feature-rich program, there a lot of available configurations. 
 
-If you have interest, you can take a look (FFMPEG Streaming Guid)[https://trac.ffmpeg.org/wiki/StreamingGuide] for detailed configurations, working with different data sources etc. Or If you want to just test it, you can use the command below.
+If you have interest, you can take a look [FFMPEG Streaming Guide](https://trac.ffmpeg.org/wiki/StreamingGuide) for detailed configurations, working with different data sources etc. Or If you want to just test it, you can use the command below.
 
 ```bash
 # Change videofilepath.mkv with your video file, $STREAM_KEY with your stream key.
