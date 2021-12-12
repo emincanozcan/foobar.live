@@ -29,7 +29,7 @@ FooBar.Tv is completely dockerized. It is possible to run the project without Do
 
 There is a file in the project called [`setup.sh`](setup.sh), it is basically a shell script that runs the necessary commands for installation.
 
-If you don't want to run a shell script directly, you can follow the steps at (#install-with-docker---manual)[Install With Docker - Manual].
+If you don't want to run a shell script directly, you can follow the steps at [Install With Docker - Manual](#install-with-docker---manual).
 
 ```bash
 # Clone this repository
