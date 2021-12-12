@@ -14,8 +14,8 @@
 - [Key Features](#key-features)
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
-  - [Install With Docker - Automatic](#install-with-docker---automatic)
-  - [Install With Docker - Manual](#install-with-docker---manual)
+  - [Installation With Docker - Automatic](#installation-with-docker---automatic)
+  - [Installation With Docker - Manual](#installation-with-docker---manual)
 - [How To Start A Livestream?](#how-to-start-a-livestream)
   - [Livestreaming With OBS](#livestreaming-with-obs)
   - [Streaming With FFmpeg](#streaming-with-ffmpeg)
@@ -57,11 +57,11 @@ FooBar.Live is completely dockerized. It is possible to run the project without 
 
 Note: FooBar.Live uses these ports: `80, 5342, 6379, 1935, 1936, 4000`. Before installation, it is recommended to ensure that these ports are not used by other processes.
 
-### Install With Docker - Automatic
+### Installation With Docker - Automatic
 
 There is a file in the project called [`setup.sh`](setup.sh), which is a shell script that runs the necessary commands for installation.
 
-If you don't want to run a shell script directly, you can follow the steps at [Install With Docker - Manual](#install-with-docker---manual).
+If you don't want to run a shell script directly, you can follow the steps at [Installation With Docker - Manual](#installation-with-docker---manual).
 
 ```bash
 # Clone this repository
@@ -74,12 +74,13 @@ $ cd foobar.live
 $ chmod +x ./setup.sh && ./setup.sh
 ```
 
+After installation; open your browser and go to `http://localhost` to access FooBar.Live.
 
-### Install With Docker - Manual
+### Installation With Docker - Manual
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/emincanozcan/foobar.live
+$ git clone https://github.com/emincanozcan/foobar.live.git
 
 # Go into the repository
 $ cd foobar.live
@@ -95,9 +96,9 @@ $ ./vendor/bin/sail up -d
 
 # Prepare the application
 $ ./vendor/bin/sail artisan key:generate && ./vendor/bin/sail artisan storage:link && ./vendor/bin/sail artisan migrate --seed
-
-# You are ready to go, go to http://localhost and enjoy it ^^
 ```
+
+After installation; open your browser and go to `http://localhost` to access FooBar.Live.
 
 ## How To Start A Livestream?
 
@@ -134,4 +135,4 @@ If you discover security-related issues, please email emincanozcann@gmail.com in
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
