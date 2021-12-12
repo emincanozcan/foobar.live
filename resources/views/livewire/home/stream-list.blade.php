@@ -1,5 +1,5 @@
 <div>
-    <div class="flex items-start justify-between">
+    <div class="flex items-start justify-between" wire:poll>
         <div>
             <h2 class="text-2xl font-medium">Live Streams</h2>
         </div>
