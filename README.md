@@ -1,5 +1,8 @@
 # FooBar.Live
 
+[![Actions Status](https://github.com/emincanozcan/foobar.live/workflows/run-tests/badge.svg)](https://github.com/emincanozcan/foobar.live/actions)
+[![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+
 A live streaming platform for developers.
 
 ## Why?
