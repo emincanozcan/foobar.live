@@ -21,7 +21,8 @@ The base features that project have to have.
 The additional features that project good to have.
 
 [] Take screenshots from live streams for presentation
-[] Inspect delay, videojs retry logic. It might be related to segment length.
+[x] Inspect the delay. It might be related to segment length.
+[] Create a retry logic for VideoJs.
 [] Design the UI, make it more fancy
 [] Follower system
 [] Subscription system
