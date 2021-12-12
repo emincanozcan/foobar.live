@@ -6,11 +6,27 @@
 [![Actions Status](https://github.com/emincanozcan/foobar.live/workflows/Code%20Styling/badge.svg)](https://github.com/emincanozcan/foobar.live/actions)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
+To watch installation and usage video, [click here](https://www.youtube.com/watch?v=k9W2BWIGitM).
+
+# Table of contents
+
+- [Purpose](#purpose)
+- [Key Features](#key-features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+  - [Install With Docker - Automatic](#install-with-docker---automatic)
+  - [Install With Docker - Manual](#install-with-docker---manual)
+- [How To Start A Livestream?](#how-to-start-a-livestream)
+  - [Livestreaming With OBS](#livestreaming-with-obs)
+  - [Streaming With FFmpeg](#streaming-with-ffmpeg)
+- [Security](#security)
+- [License](#license)
+
 ## Purpose
 
 Developing things and solving problems during a live-stream is fun, educational and also a good opportunity to meet new people.
 
-Unfortunately; popular live-streaming platforms do not focus on developers. It's hard for the developer and the audience to find each other and come together on these platforms.
+Unfortunately; popular livestreaming platforms do not focus on developers. It's hard for the developer and the audience to find each other and come together on these platforms.
 
 There are helpful platforms that inform you about live-streams on Youtube, Twitch etc., for example [LaraStreamers](https://larastreamers.com/). I got to know many Laravel streamers from there. 
 
@@ -33,11 +49,13 @@ Also, it started to be created in a Hackathon, [ÜçBüyücü Turnuvası](https:
 * Redis for pub/sub
 * PostgreSQL as database
 * PHP Laravel Framework / Jetstream with Livewire Stack for application
-* Docker - Docker-Compose to run and orchestrate all stack. 
+* Docker - Docker-Compose to run and orchestrate services. 
 
 ## Installation
 
-FooBar.Tv is completely dockerized. It is possible to run the project without Docker, but it is not recommended because of the effort that it will take.
+FooBar.Live is completely dockerized. It is possible to run the project without Docker, but it is not recommended because of the effort that it will take.
+
+Note: FooBar.Live uses these ports: `80, 5342, 6379, 1935, 1936, 4000`. Before installation, it is recommended to ensure that these ports are not used by other processes.
 
 ### Install With Docker - Automatic
 
@@ -47,7 +65,7 @@ If you don't want to run a shell script directly, you can follow the steps at [I
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/emincanozcan/foobar.live
+$ git clone https://github.com/emincanozcan/foobar.live.git
 
 # Go into the repository
 $ cd foobar.live
@@ -81,9 +99,9 @@ $ ./vendor/bin/sail artisan key:generate && ./vendor/bin/sail artisan storage:li
 # You are ready to go, go to http://localhost and enjoy it ^^
 ```
 
-## How To Start A Live Stream?
+## How To Start A Livestream?
 
-### With OBS
+### Livestreaming With OBS
 
 [OBS (Open Broadcaster Software)](https://obsproject.com/) is free and open source software for video recording and live-streaming.
 
@@ -95,10 +113,10 @@ $ ./vendor/bin/sail artisan key:generate && ./vendor/bin/sail artisan storage:li
 	* Write `rtmp://localhost:1935/stream_receiver` to server field.
 	* Paste the stream key that you have copied to the Stream Key field.
 	* Click on Apply and Okay
-	* Last step; click on the `Start Streaming` button and your first live-stream vie FooBar.Live will be started.
-* Go to the `http://localhost/u/{username}` URL or click on My Live Stream button which located on the header at the Dashboard.
+	* The last step; click on the `Start Streaming` button and your first live-stream vie FooBar.Live will be started.
+* To watch, go to the `http://localhost/u/{username}` URL or click on My Live Stream button which is located on the header at the Dashboard.
 
-### With FFmpeg
+### Streaming With FFmpeg
 
 Especially for development purposes, opening OBS and starting a new live-stream might be a little bit boring after a while. Using FFmpeg is a good alternative for this kind of situation, it allows you to stream a video file to an RTMP server. Because of FFmpeg is a feature-rich program, there are a lot of available configurations. 
 
@@ -109,6 +127,10 @@ If you have interest, you can take a look [FFmpeg Streaming Guide](https://trac.
 
 $ ffmpeg -re -i videofilepath.mp4 -vcodec libx264 -vprofile baseline -g 30 -acodec aac -strict -2 -f flv rtmp://localhost:1935/stream_receiver/$STREAM_KEY
 ```
+
+## Security
+
+If you discover security-related issues, please email emincanozcann@gmail.com instead of using the issue tracker.
 
 ## License
 
