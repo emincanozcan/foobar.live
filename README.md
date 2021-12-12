@@ -20,7 +20,7 @@ This is how the idea of FooBar.Live was born. It emerged as an attempt to solve 
 ## Key Features
 
 * Live-streaming without any remote dependencies like YouTube or Twitch. FooBar.Live includes a Nginx RTMP server for video streaming.
-* Provides live update by using socket connection. When new messages are sent to chat or viewer count is changed, viewers will know that instantly. Not depend on a third party service like Pusher, FooBar.Live contains a socket server and uses Redis pub/sub to communicate.  
+* Provides live updates by using socket connection. When new messages are sent to chat or viewer count is changed, viewers will know that instantly. Not depend on a third party service like Pusher, FooBar.Live contains a socket server and uses Redis pub/sub to communicate.  
 * Supports tools that live streamers already use. Thanks to RTMP support, OBS and a lot of streaming tools are supported. It is enough to just change URL and streaming key.
 
 
