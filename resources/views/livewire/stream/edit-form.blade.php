@@ -40,7 +40,7 @@
                             <ul>
                                 @foreach ($filteredTags as $tag)
                                     <li class="border-b border-gray-200 last:border-b-0">
-                                        <button wire:key="tag['id']" wire:click="addTag({{$tag['id']}})" class="flex justify-center w-full px-3 py-3 hover:bg-gray-100 transition" >
+                                        <button type="button" wire:key="tag['id']" wire:click="addTag({{$tag['id']}})" class="flex justify-center w-full px-3 py-3 hover:bg-gray-100 transition" >
                                             <span class="mx-4">{{ $tag['name'] }}</span>
                                         </button>
                                     </li>
