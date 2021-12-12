@@ -24,6 +24,15 @@ This is how the idea of FooBar.Live was born. It emerged as an attempt to solve 
 * Provides live updates by using socket connection. When new messages are sent to chat or viewer count is changed, viewers will know that instantly. Not depend on a third party service like Pusher, FooBar.Live contains a socket server and uses Redis pub/sub to communicate.  
 * Supports tools that streamers already use. Thanks to RTMP support, OBS and a lot of streaming tools are supported. It is enough to just change URL and streaming key.
 
+## Tech Stack
+
+* Nginx RTMP to receive video streaming
+* Node.Js / Socket.io for socket server needs
+* Redis for pub/sub
+* PostgreSQL as database
+* PHP Laravel Framework / Jetstream with Livewire Stack for application
+* Docker - Docker-Compose to run and orchestrate all stack. 
+
 ## Installation
 
 FooBar.Tv is completely dockerized. It is possible to run the project without Docker, but it is not recommended because of the effort that it will take.
