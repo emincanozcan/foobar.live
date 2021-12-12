@@ -1,4 +1,4 @@
-name: Style code
+name: Code Styling
 on:
   - push
 
