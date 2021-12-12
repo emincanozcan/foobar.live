@@ -62,17 +62,21 @@ services:
         - "1936:1936"
       networks:
         - sail
+      depends_on:
+        - laravel.test
+
     socket-server:
       build:
         context: ./socket-server
         dockerfile: Dockerfile
-      volumes:
-          - ./socket-server:/usr/src/app
+        # volumes:
+        #     - ./socket-server:/usr/src/app
       ports:
         - "4000:4000"
       networks:
         - sail
-
+      depends_on:
+        - laravel.test
 
 networks:
     sail:

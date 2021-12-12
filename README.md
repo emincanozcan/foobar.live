@@ -53,7 +53,7 @@ $ git clone https://github.com/emincanozcan/foobar.live
 $ cd foobar.live
 
 # Run the script
-$ chmox +x ./setup.sh && ./setup.sh
+$ chmod +x ./setup.sh && ./setup.sh
 ```
 
 
