@@ -59,7 +59,7 @@ $ cd foobar.live
 $ cp .env.example .env
 
 # Install PHP dependencies using a docker container
-$ docker run --rm --interactive --tty --volume $PWD:/app composer install
+$ docker run --rm --interactive --tty --volume $PWD:/app --user $(id -u):$(id -g) composer install
 
 # Run the containers
 $ ./vendor/bin/sail up -d
