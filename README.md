@@ -28,9 +28,7 @@ Developing things and solving problems during a live-stream is fun, educational 
 
 Unfortunately; popular livestreaming platforms do not focus on developers. It's hard for the developer and the audience to find each other and come together on these platforms.
 
-There are helpful platforms that inform you about live-streams on Youtube, Twitch etc., for example [LaraStreamers](https://larastreamers.com/). I got to know many Laravel streamers from there. 
-
-But these platforms are sharing with you what you are already interested in. They're not good at creating new interests.
+There are helpful platforms that inform you about live-streams on Youtube, Twitch etc., for example [LaraStreamers](https://larastreamers.com/). I got to know many Laravel streamers from there. But these platforms are sharing with you what you are already interested in. They're not good at creating new interests.
 
 This is how the idea of FooBar.Live was born. It emerged as an attempt to solve the mentioned problems.
 
