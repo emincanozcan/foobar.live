@@ -15,7 +15,7 @@
         <div class="flex flex-col justify-center h-full lg:flex-row">
 
             <div class="flex flex-col mb-4 lg:mb-0 lg:mr-8 sm:rounded-lg" id="player-wrapper">
-                <video id="my-player" class="w-full vjs-big-play-centered video-js" controls preload="auto" poster="//vjs.zencdn.net/v/oceans.png" data-setup='{"fluid": true}'>
+                <video id="my-player" class="w-full vjs-big-play-centered video-js" autoplay controls preload="auto" poster="{{url('/images/hogwarts_poster.jpg')}}" data-setup='{"fluid": true}'>
                     <source src="http://localhost:1936/live-stream/{{$stream->id}}/index.m3u8" type="application/x-mpegURL">
                     </source>
                     <p class="vjs-no-js">
