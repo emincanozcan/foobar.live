@@ -1,22 +1,22 @@
-<div @unless($stream) wire:poll="fillStreamData" @endunless style="min-height: 100%;">
+<div @unless($exists) wire:poll="fillStreamData" @endunless style="min-height: 100%;">
     <style>
     @media (min-width: 1024px){ 
         #player-and-chat {  } 
         #my-player {
+            background:transparent;
             width: max(calc(80vh - 15rem), 50vw);
-            height: calc(60vw / 16 * 9);
         }
     }
     </style>
 
-    @if ($stream)
+    @if ($exists)
     <div id="player-and-chat">
 
         <div class="flex flex-col justify-center h-full lg:flex-row">
 
             <div class="flex flex-col mb-4 lg:mb-0 lg:mr-8 sm:rounded-lg" id="player-wrapper">
-                <video id="my-player" class="w-full vjs-big-play-centered video-js" autoplay controls preload="auto" poster="{{url('/images/hogwarts_poster.jpg')}}" data-setup='{"fluid": true}'>
-                    <source src="http://localhost:1936/live-stream/{{$stream->id}}/index.m3u8" type="application/x-mpegURL">
+                <video id="my-player" class="w-full border shadow-xl vjs-big-play-centered video-js" autoplay  controls preload="auto" poster="{{url('/images/hogwarts_poster.jpg')}}" data-setup='{"fluid": true}'>
+                    <source src="{{$streamUrl}}" type="application/x-mpegURL">
                     </source>
                     <p class="vjs-no-js">
                         To view this video please enable JavaScript, and consider upgrading to a
@@ -85,6 +85,8 @@
                         })
     
                         const video = document.querySelector('#my-player')
+
+                        videojs('#my-player')
                         const videoParent = document.querySelector('#player-wrapper')
                         const chat = document.querySelector('#chat')
                         
@@ -131,7 +133,7 @@
     @endif
     @else
         <div class="px-12 py-12 mx-auto bg-white rounded-lg shadow-lg max-w-7xl">
-            <h2 class="text-xl text-center text-gray-700">The stream not started yet. You'll see it here when it starts.</h2>
+            <h2 class="text-xl text-center text-gray-700">The stream hasn't started yet. You'll see it here when it starts.</h2>
         </div>
     @endif
 </div>
