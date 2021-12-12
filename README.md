@@ -6,7 +6,7 @@
 [![Actions Status](https://github.com/emincanozcan/foobar.live/workflows/Code%20Styling/badge.svg)](https://github.com/emincanozcan/foobar.live/actions)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
-To watch installation and usage video, [click here](https://www.youtube.com/watch?v=k9W2BWIGitM).
+[Click here](https://www.youtube.com/watch?v=k9W2BWIGitM) to watch the installation & usage video in Turkish.
 
 # Table of contents
 
